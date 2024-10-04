@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+html {
+    scroll-behavior: smooth;
+  }
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{ 
+    /* fonts */
+    --DISPLAY-FONT: "Tilt Warp", sans-serif;
+    --SECONDARY-FONT: "Spline Sans Mono", monospace;
+    /* --TEXT-FONT: "Archivo", system-ui; */
+    --TEXT-FONT: "Rubik", sans-serif;;
+
+    /* Color Pallete */
+    --DARK-COLOR:rgb(0, 0, 34);
+    --LIGHT-COLOR: #EEEEEE;
+    --SECONDARY-DARK-COLOR: #134B70;
+    --SECONDARY-LIGHT-COLOR: #00eeff;
+}
+
+body{
+    
+    width: 100%;
+    min-width: 450px;
+    min-height: 483px;
+    background-color: var(--DARK-COLOR);
+
+}
+
+header, #hero, #about{
+    padding: 0 5% 0 5%;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    min-height: 35px;
+    align-items: center;
+    background-color: var(--DARK-COLOR);
+    position: fixed;
+
+    z-index: 10000;
+}
+
+header h2{
+    font-family: var(--DISPLAY-FONT);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--LIGHT-COLOR);
+    text-shadow: 0 0 10px var(--SECONDARY-LIGHT-COLOR);
+    
+    
+}
+
+header h2 span{
+    display: inline-block;
+    color: var(--SECONDARY-LIGHT-COLOR);
+
+    animation: rollin 1.5s ease-in-out forwards;
+
+}
+
+@keyframes rollin{
+    0%{
+        transform: translateX(-300px) rotate(0deg);
+    }
+    75%{
+        transform: translateX(10px) rotate(450deg);
+
+    }
+
+    100%{
+        transform: translateX(0px) rotate(360deg); 
+       
+    }
+}
+
+header ul{
+    list-style-type:none;
+    display: flex;
+    min-width: 40%;
+    justify-content: flex-end;
+}
+
+header ul li{
+    font-family: var(--SECONDARY-FONT);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: var(--LIGHT-COLOR);
+    font-weight: bolder;
+    font-size: 1.1rem;
+    padding-left: 30px;
+
+    transition: all .3s ease-in-out;
+}
+
+header a{
+    text-decoration: none;
+
+    font-family: var(--DISPLAY-FONT);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: var(--LIGHT-COLOR);
+    font-weight: bolder;
+    font-size: 1.3rem;
+
+    transition: all .3s ease-in-out;
+}
+
+header a:hover{
+    color: var(--SECONDARY-LIGHT-COLOR);
+    cursor: pointer;
+}
+
+header a:active{
+    color: var(--SECONDARY-LIGHT-COLOR);
+}
+
+
+
+.menue{
+    display: none;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 42px;
+    width: 42px;
+    
+}
+
+.menue-icon{
+    width: 40px;
+    height: 7px;
+    background-color: #000;
+}
+/* Header section end */
+
+/* main section start */
+main{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+#hero{
+    height: 100vh;
+    width: 100%;
+    
+    min-height: 600px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    
+}
+.hero-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+
+}
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100%;
+}
+
+.hero-text h1{
+    font-family: var(--DISPLAY-FONT);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--LIGHT-COLOR);
+    font-size: 4rem;
+}
+
+
+.hero-text h1:nth-child(2)::after{
+    content: " Daniel Ijezie";
+    color: var(--SECONDARY-LIGHT-COLOR);
+}
+
+.hero-text p{
+    font-family: var(--TEXT-FONT);
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--LIGHT-COLOR);
+}
+
+.hero-text p::after{
+    content: "";
+    color: var(--SECONDARY-LIGHT-COLOR);
+    animation-name: typeeffect;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode:forwards;
+}
+
+
+
+
+
+.hero-text h3{
+    font-family: var(--SECONDARY-FONT);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: var(--SECONDARY-LIGHT-COLOR);
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.hero-text button{
+    /* margin-top: 2rem; */
+    border: none;
+    height: 4rem;
+    width: 14rem;
+    background-color: var(--SECONDARY-LIGHT-COLOR);
+    color: var(--DARK-COLOR);
+    font-family: var(--TEXT-FONT);
+    font-weight:bolder;
+    font-size: 1.5rem;
+
+    border: 2px solid var(--SECONDARY-DARK-COLOR);
+    box-shadow: var(--SECONDARY-DARK-COLOR) 0 0 70px 20px;
+    border-radius: 1.5rem;
+
+    animation-name: glow_button, shake_button;
+    animation-duration: 5s,4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite, infinite;
+
+    transition: all .2s ease-in-out;
+}
+
+.hero-text button:hover{
+    cursor: pointer;
+    
+   
+    
+    box-shadow: var(--SECONDARY-DARK-COLOR) 0 0 40px 8px;
+    
+
+    animation-name: hover_glow_button;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+ 
+@keyframes shake_button{
+    0%{
+        transform: rotateZ(2deg);
+    }
+
+    4%{
+        transform: rotateZ(-2deg);
+    }
+
+    8%{
+        transform: rotateZ(2deg);
+    }
+
+    12%{
+        transform: rotateZ(-2deg);
+    }
+    16%{
+        transform: rotateZ(0deg);
+    }
+
+}
+
+@keyframes glow_button{
+    0%{
+        box-shadow: var(--SECONDARY-DARK-COLOR) 0 0 10px 2px;
+    }
+
+    50%{
+        box-shadow: var(--SECONDARY-DARK-COLOR) 0 0 30px 5px;
+    }
+
+    100%{
+        box-shadow: var(--SECONDARY-DARK-COLOR) 0 0 7px 2px;
+    }
+}
+
+@keyframes hover_glow_button{
+    0%{
+        box-shadow: var(--SECONDARY-DARK-COLOR) 0 0 20px 3px;
+    }
+
+    100%{
+        box-shadow: var(--SECONDARY-DARK-COLOR) 0 0 50px 8px;
+    }
+}
+
+.hero-text button:last-child{
+    background-color: var(--DARK-COLOR);
+    color: var(--SECONDARY-LIGHT-COLOR);
+    animation: none;
+    box-shadow: none;
+    border: 2px solid var(--SECONDARY-LIGHT-COLOR);
+    margin-left: 1rem;
+}
+
+
+.hero-text button:last-child:hover{
+    box-shadow: var(--SECONDARY-LIGHT-COLOR) 0 0 6px 1px;
+    text-shadow: 0 0 20px var(--SECONDARY-LIGHT-COLOR);
+}
+
+.hero-image{
+    height: 100%;
+    width: 50%;
+
+    
+}
+.hero-portfolio-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 50% 60% 40% 70% / 60% 40% 70% 50%;
+   
+    background-color: transparent;
+    
+
+    font-family: var(--DISPLAY-FONT);
+    font-size: 5rem;
+    text-align: center;
+    font-weight: bolder;
+    color: var(--DARK-COLOR);
+    
+
+   
+
+    animation-name: test_animation;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+.hero-portfolio-image figure{
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.hero-portfolio-image img{
+    height: auto;
+    width: 50%;
+    object-fit: cover;
+    padding-bottom: 10%;
+    
+    animation-name: test_animation;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+
+  
+}
+
+@keyframes test_animation{
+    0%{
+        border-radius: 50% 60% 40% 70% / 60% 40% 70% 50%;
+        
+        
+    }
+
+    100%{
+        border-radius: 60% 40% 70% 50% / 50% 60% 40% 70%;
+        
+        
+    }
+}
+/* hero end */
+/* About start */
+
+/* about end */
+/* Javascript Classes */
+
+/* Hiddden classes for nav menue start */
+.hidden{
+    display: none;
+}
+
+.rotate-menue-icon-first-child{
+    transform: rotateZ(45deg) translateY(10%) translateX(26%);
+}
+
+.remove-menue-icon-middle-child{
+    display: none;
+}
+
+.rotate-menue-icon-last-child{
+    transform: rotateZ(-45deg) translateY(-10%) translateX(26%);
+}
+
+.show_navigation_ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 92vh;
+
+    margin: auto;
+    position: absolute;
+    top: max(40px, 8vh);
+    left: 0;
+    text-align: center;
+    background-color: var(--DARK-COLOR);
+    min-width: 310px;
+    z-index: 10000;
+}
+
+.style_resposive_nav_items{
+    height: 10%;
+    width: 100%;
+    font-size: 2rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+/* Hiddden classes for nav menue end */
+
+
+
+/* Media Query for above 768px */
+@media screen and (max-width: 1116px){
+    header{
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        min-height: 46px;
+        z-index: 10000;
+        background-color: var(--DARK-COLOR);
+
+    }
+
+    header a{
+        font-size: 2rem;
+    }
+
+    .menue{
+        display: flex;
+    }
+
+    .menue:hover{
+        cursor: pointer;
+    }
+
+    .menue-icon{
+        background-color: var(--LIGHT-COLOR);
+    }
+
+    /* Hero Section */
+
+    main{
+        /* border: 2px solid gray; */
+      
+    }
+    *{
+        /* border: 2px solid red; */
+    }
+    main{
+        /* min-width: 600px; */
+        /* border: 5px solid yellow; */
+    }
+    #hero{
+        
+        /* min-width: 436px; */
+       /* border: 2px solid rebeccapurple;  */
+
+    
+    }
+    #hero, #about, #projects, #contact, #contact{
+        scroll-margin-top: 100px;
+        min-height: 762px;
+    }
+    .hero-container{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        padding-top: 8vh;
+        
+    }
+
+   
+
+    .hero-text h1:nth-child(2)::after{
+        display: none;
+    }
+
+    .hero-text h1{
+        font-size: 2.5rem;
+    }
+    .hero-text h1::after{
+        content:  " Daniel Ijezie";
+        color: var(--SECONDARY-LIGHT-COLOR);
+        font-size: 2.5rem;
+    }
+
+    .hero-text p{
+        font-family: var(--TEXT-FONT);
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: var(--LIGHT-COLOR);
+    }
+
+    .hero-text div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 100%;
+
+        /* border: 3px solid rebeccapurple; */
+    }
+
+    .hero-text button{
+        margin: auto 0;
+        width: 100%;
+    }
+    .hero-text button:last-child{
+        margin: 0;
+    }
+
+    .hero-image{
+        height: 50%;
+        width: auto;
+
+       
+        margin: 0;
+        padding: 0;
+
+        
+    }
+
+    .hero-portfolio-image{
+        height: 100%;
+        width: 100%;
+    }
+
+    .hero-portfolio-image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+  
+
+}

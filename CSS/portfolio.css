@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Tilt+Warp&display=swap');
+
+html {
+    scroll-behavior: smooth;
+  }
+ 
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* fonts */
+    --DISPLAY-FONT: "Tilt Warp", sans-serif;
+    --SECONDARY-FONT: "Spline Sans Mono", monospace;
+    --TEXT-FONT: "Archivo", system-ui;
+
+    /* Color Pallete */
+    --DARK-COLOR:rgb(0, 0, 34);
+    --LIGHT-COLOR: #EEEEEE;
+    --SECONDARY-DARK-COLOR: #134B70;
+    --SECONDARY-LIGHT-COLOR: #00eeff;
+}
+
+body{
+    
+    
+    min-width: 10px;
+    background-color: var(--LIGHT-COLOR);
+    animation: grow 1s ease-in backwards;
+
+}
+
+header, #hero, #about{
+    padding: 0 5% 0 5%;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    min-height: 35px;
+    align-items: center;
+    background-color: var(--DARK-COLOR);
+    position: fixed;
+
+    z-index: 10;
+}
+
+header h2{
+    font-family: var(--DISPLAY-FONT);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--LIGHT-COLOR);
+    text-shadow: 0 0 10px var(--SECONDARY-LIGHT-COLOR);
+    
+    
+}
+
+header h2 span{
+    display: inline-block;
+    color: var(--SECONDARY-LIGHT-COLOR);
+
+    animation: rollin 1.5s ease-in-out forwards;
+
+}
+
+@keyframes rollin{
+    0%{
+        transform: translateX(-300px) rotate(0deg);
+    }
+    75%{
+        transform: translateX(10px) rotate(450deg);
+
+    }
+
+    100%{
+        transform: translateX(0px) rotate(360deg); 
+       
+    }
+}
+
+header ul{
+    list-style-type:none;
+    display: flex;
+    min-width: 40%;
+    justify-content: flex-end;
+}
+
+header ul li{
+    font-family: var(--SECONDARY-FONT);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: var(--LIGHT-COLOR);
+    font-weight: bolder;
+    font-size: 1.1rem;
+    padding-left: 30px;
+
+    transition: all .3s ease-in-out;
+}
+
+header a{
+    text-decoration: none;
+
+    font-family: var(--SECONDARY-FONT);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: var(--LIGHT-COLOR);
+    font-weight: bolder;
+    font-size: 1.1rem;
+
+    transition: all .3s ease-in-out;
+}
+
+header a:hover{
+    color: var(--SECONDARY-LIGHT-COLOR);
+    cursor: pointer;
+}
+
+header a:active{
+    color: var(--SECONDARY-LIGHT-COLOR);
+}
+
+
+
+.menue{
+    display: none;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 42px;
+    width: 42px;
+    
+}
+
+.menue-icon{
+    width: 40px;
+    height: 7px;
+    background-color: #000;
+}
+/* Header section end */
+
+/* Hiddden classes for nav menue start */
+.hidden{
+    display: none;
+}
+
+.rotate-menue-icon-first-child{
+    transform: rotateZ(45deg) translateY(10%) translateX(26%);
+}
+
+.remove-menue-icon-middle-child{
+    display: none;
+}
+
+.rotate-menue-icon-last-child{
+    transform: rotateZ(-45deg) translateY(-10%) translateX(26%);
+}
+
+.show_navigation_ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 92vh;
+
+    margin: auto;
+    position: absolute;
+    top: max(40px, 8vh);
+    left: 0;
+    text-align: center;
+    background-color: var(--DARK-COLOR);
+    min-width: 310px;
+    z-index: 10;
+}
+
+.style_resposive_nav_items{
+    height: 10%;
+    width: 100%;
+    font-size: 2rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+/* Hiddden classes for nav m enue end */
+
+/* Portfolio styles */
+#portfolio{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--LIGHT-COLOR);
+}
+
+.portfolio{
+    min-height: 100vh;
+    padding-top: 10vh;
+    margin: auto;
+    height: 100%;
+    width: 95%;
+    background-color: var(--LIGHT-COLOR);
+    
+}
+.portfolio_search_container{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio_search_container h1{
+    font-family: var(--DISPLAY-FONT);
+    color: var(--DARK-COLOR);
+    font-size: 2rem;
+}
+.portfolio_search_container h1::after{
+    content: " Projects";
+    color: red
+}
+.portfolio_search{
+    /* background-color: red; */
+    width: max(30%, 400px);
+    height: 50px;
+
+    text-align: center;
+    border-radius: 30px;
+    border: 2px solid var(--DARK-COLOR);
+
+    display: flex;
+
+    
+}
+.portfolio_search form{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.portfolio_search input{
+    background-color: var(--LIGHT-COLOR);
+    width: 75%;
+    height: 90%;
+    border: none;
+    margin: auto 0;
+    padding: 3%;
+    outline: none;
+
+    font-size: 1.5rem;
+    font-family: var(--TEXT-FONT);
+
+}
+
+.portfolio_search input:focus{
+    border: none;
+}
+
+.portfolio_search button{
+    width: 10%;
+    height: 100%;
+    border: none;
+    border-left: 2px solid var(--DARK-COLOR);
+    border-radius: 0 30px 30px 0;
+    padding-left: 0%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.portfolio_search button:hover{
+    cursor: pointer;
+}
+
+
+.portfolio_body{
+    margin-top: 50px;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio_card{
+    width:  max(30%, 400px);
+    height: auto;
+    
+    
+    border: 3px solid var(--DARK-COLOR);
+    border-radius: 20px;
+    margin: .8%;
+    padding: .8%;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all 1s
+}
+
+.portfolio_card:hover{
+    box-shadow: var(--DARK-COLOR) 0 0 30px 5px;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.portfolio_card_image{
+    
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.portfolio_card_image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+    /* aspect-ratio: 6/2; */
+    object-fit:cover;
+}
+
+.portfolio_card_image div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background-color: rgba(0, 0, 14, 0.356);
+}
+.portfolio_card h1{
+    font-family: var(--DISPLAY-FONT);
+
+    font-size: 1.5rem;
+    margin: 1% 0;
+    color: var(--DARK-COLOR);
+    height: 10;
+}
+.portfolio_card h2{
+    font-family: var(--TEXT-FONT);
+    font-size: 1.3rem;
+    font-weight:normal;
+    overflow: auto;
+    height: 20%;
+    margin-bottom: 1%;
+}
+.portfolio_card h2 span{
+    color: var(--DARK-COLOR);
+    font-weight: bolder;
+}
+.portfolio_card h3{
+    margin-top: auto;
+    font-family: var(--SECONDARY-FONT);
+}
+.portfolio_card .links{
+    width: 100%;
+    height: 10%;
+
+    margin-top: auto;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.portfolio_card a{
+    text-decoration: none;
+    font-family: var(--TEXT-FONT);
+    font-size: 1.5rem;
+    background-color: var(--SECONDARY-DARK-COLOR);
+    color: var(--LIGHT-COLOR);
+    width: 45%;
+    height: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 20px;
+    /* border: 2px solid var(--DARK-COLOR); */
+
+    transition: all 1s;
+}
+
+.portfolio_card a:hover{
+    text-shadow: 0 0 10px var(--SECONDARY-LIGHT-COLOR);
+    box-shadow: 0 0 10px var(--SECONDARY-LIGHT-COLOR);
+}
+
+/* Portfolio styles end */
+
+
+
+
+/* Media Query for above 768px */
+@media screen and (max-width: 1116px){
+    header{
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        min-height: 46px;
+        z-index: 1;
+        background-color: var(--DARK-COLOR);
+
+    }
+    .menue{
+        display: flex;
+    }
+
+    .menue:hover{
+        cursor: pointer;
+    }
+
+    .menue-icon{
+        background-color: var(--LIGHT-COLOR);
+    }
+
+    .portfolio_search_container{
+        flex-direction: column-reverse;
+    }
+
+
+}
+
+@keyframes grow{
+    0%{
+        transform: scale(0);
+    }
+    80%{
+        transform: scale(1.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.hidden{
+    display: none;
+}
