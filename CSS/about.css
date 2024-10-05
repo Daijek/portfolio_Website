@@ -1,292 +1,118 @@
-#about{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-color:var(--DARK-COLOR);
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-    min-height: 850px;
-}
-#about .title{
-    width: 100%;
-    
+#about{
     background-color: var(--LIGHT-COLOR);
+    padding: 20px 0 100px 0;
+}
+
+.about_wrapper{
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-
-    height: 5%;
-
-    /* background-color: red; */
-    height: 70px;
-    
+}
+.about_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#about .title h1{
+.about_container .intro{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--LIGHT-COLOR);
+    padding: 50px 0;
+}
+
+.about_container .intro>h1{
     font-family: var(--DISPLAY-FONT);
     color: var(--DARK-COLOR);
+}
+.about_container .intro>h1:first-child{
     font-size: 3rem;
-}
-.about{
-    height: 87%;
-    
-    width: 100%;
-    padding: 0% 1% 0 1%;
-    
-    background-color: var(--LIGHT-COLOR);
-
-    gap: 1rem;
-    display: grid;
-    grid-template-rows: 35% 35% 20%;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-areas: 
-    "im im ex ex ex ex ed ed ed ed"
-    "im im de de de de de de de de"
-    "sk sk sk sk sk sk sk sk sk sk"
-    ;
+    margin-bottom: 1rem;
 }
 
+.about_container .intro>h1:last-child{
+    font-family: var(--TEXT-FONT);
+    font-size: 1.2rem;
+    width: 87%;
+    /* font-weight: lighter; */
+}
 
-#about .image{
-    
-   
-    grid-area: im;
-
+.techstack{
+    margin-top: 2px;
+    width: 95%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 3rem;
+}
+
+.techstack>div{
+    width: max(350px, 30%);
+    
+    display: flex;
+    flex-direction: column;
     align-items: center;
 
-    /* border: 2px solid var(--DARK-COLOR); */
-    border-radius: 30px;
+    border: 2px solid var(--DARK-COLOR);
+    border-radius: 20px;
 }
 
-#about .image img{
-    object-fit: cover;
+.techstack figure{
+    width: 30%;
+}
+.techstack figure img{
     width: 100%;
-    height: 100%;
-
-    border-radius: 30px;
 }
 
-#about .experience{
-    background-color: var(--LIGHT-COLOR);
-    grid-area: ex;
-
-    /* border: 2px solid var(--SECONDARY-DARK-COLOR); */
-    border-radius: 30px;
-    padding: 0 20px;
-
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: flex-start;
-    
-    
-    
-}
-
-#about .education{
-    background-color: var(--LIGHT-COLOR);
-    
-    grid-area: ed;
-
-    /* border: 2px solid var(--SECONDARY-DARK-COLOR); */
-    border-radius: 30px;
-    padding: 0 20px;
-
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: flex-start;
-}
-
-#about .experience h1, #about .education h1{
+.techstack>div>h1{
     font-family: var(--DISPLAY-FONT);
-    font-size: max(2vw, 2rem);
-    color: var(--DARK-COLOR);
-    text-align: left;
-    
-}
-
-#about .experience h2, #about .education h2{
-    font-family: var(--TEXT-FONT);
-    font-size: max(1.5vw, 1.1rem);
-    color: var(--DARK-COLOR);
-    text-align: left;
-  
-}
-
-
-
-.about_icon{
-    width: 60px;
-    height: 60px;
-
-    margin-top: 5%;
- 
-    
-}
-.about_icon img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-#about .description{
-    background-color: var(--LIGHT-COLOR);
-    /* border: 2px solid var(--DARK-COLOR); */
-    border-radius: 30px;
-    grid-area: de;
-
-    padding: 0 1% 0 1%;
-    
-    
-    
-}
-
-#about .description div{
-    
-    height: 75%;
-    width: 100%;
-    
-    overflow: auto;
-}
-
-#about .description h1{
-    font-family: var(--DISPLAY-FONT);
-    font-size: 2rem;
-}
-
-#about .description p{
-    font-family: var(--TEXT-FONT);
     font-size: 1.5rem;
-    font-weight:500;
-
-    
+    color: black;
 }
 
+.techstack>div>h2{
+    font-family: var(--TEXT-FONT);
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--DARK-COLOR);
+    min-height: 150px;
+    width: 90%;
+}
 
-#about .skill_carousel{
+.techstack>div>h3{
+    color: black;
+    font-family: var(--TEXT-FONT);
     width: 100%;
-    background-color: var(--LIGHT-COLOR);
-    grid-area: sk;
+    text-align: center;
+}
+
+.techstack .skills_container{
+    margin-top: 10px;
+    width: 100%;
     display: flex;
+    gap: .5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.techstack .skills_container .skill_icon{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    position: relative;
-    gap: 3rem;
-    
 }
 
-.skill_carousel div:nth-child(2), .skill_carousel div:nth-child(3){
-    display: flex;
-    gap: 3rem;
-   
-
-    animation-name: skill_carousel;
-    animation-duration: 15s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
-
+.techstack .skills_container img{
+    width: 70%;
+    aspect-ratio: 1/1;
 }
-
-
-
-.skill_carousel div:first-child{
-    position: absolute;
-    height: 100%;
-    width: 20%;
-    left: 0;
-    background: linear-gradient(to right, var(--LIGHT-COLOR), transparent);
-    z-index: 1;
+.techstack .skills_container p{
+    text-align: center;
+    font-family: var(--SECONDARY-FONT);
+    font-weight: bold;
+    width: 100%;
+    /* overflow-wrap: break-word; */
 }
-
-.skill_carousel div:last-child{
-    position: absolute;
-    height: 100%;
-    width: 20%;
-    right: 0;
-    background: linear-gradient(to right, transparent, var(--LIGHT-COLOR));
-}
-
-
-
-#about .skill_carousel div img{
-    height: 6vw;
-    /* width: auto; */
-
-    /* margin: 0 30px; */
-
-    
-}
-
-@keyframes skill_carousel {
-    to{
-        transform: translateX(calc(-100% - 3rem));
-    }
-    
-}
-
-@media screen and (max-width: 708px){
-    .about{
-        height: 92%;
-        min-height: 700px;
-        width: 100%;
-        padding: 1% 1% 0 1%;
-        
-        background-color: var(--LIGHT-COLOR);
-    
-        gap: 1rem;
-        display: grid;
-        grid-template-rows: 15% 15% 45% 20%;
-        grid-template-columns: repeat(10, 1fr);
-        grid-template-areas: 
-        "im im im im ex ex ex ex ex ex"
-        "im im im im ed ed ed ed ed ed"
-        "im im im im de de de de de de"
-        "sk sk sk sk sk sk sk sk sk sk"
-        ;
-    }
-
-    .about_icon{
-        display: none;
-        
-    }
-
-    #about .education, #about .experience{
-        justify-content: flex-end;
-        padding: 0;
-    }
-
-    #about .skill_carousel div img{
-        height: 10vw;
-        width: auto;
-    
-        margin: 0 30px;
-    
-        
-    }
-
-    #about .image img{
-        object-fit: cover;
-        width: 95%;
-        height: 95%;
-    
-        border-radius: 30px;
-    }
-
-    #about .image{
-        display: flex;
-        /* border: 2px solid var(--DARK-COLOR); */
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-}
- 
